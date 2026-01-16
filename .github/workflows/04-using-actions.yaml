@@ -1,16 +1,16 @@
 name: 04 - Using Actions
 
-on: 
-  push:
-    paths:
-      - ".github/workflows/04-using-actions.yaml"
+on: push
 
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 04-using-actions/react-app
     steps: 
       - name: Checkout Code
         uses: actions/checkout@v4
       - name: Printing Folders
-        runs: ls 
+        run: ls 
